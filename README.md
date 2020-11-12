@@ -22,4 +22,11 @@ On Linux or Mac OS
 ```
 You should see the following if all works well.
 
-![Screenshot](https://github.com/popsonebz/monitoring/blob/main/monitoring-nginx.png)
+![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/monitoring-nginx.png)
+7. Verify the services are running using the browser.
+  a. prometheus: http://localhost:9090
+  ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/prometheus.png)
+  b. alertmanager: http://localhost:9093
+  ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/alertmanager.png)
+  c. nginx:  http://localhost:8080
+  ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/nginx.png)
