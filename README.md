@@ -21,3 +21,5 @@ On Linux or Mac OS
   docker ps
 ```
 You should see the following if all works well.
+
+![Screenshot](https://github.com/popsonebz/monitoring/blob/main/monitoring-nginx.png)
