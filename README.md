@@ -24,7 +24,7 @@ On Linux or Mac OS
 
     ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/monitoring-nginx.png)
 
-7. Verify the services are running using the browser.
+7. Verify the services are running using the browser. The pictures below shows the ideal state when NGINX is up.
 
     a. prometheus: http://localhost:9090
 
@@ -37,3 +37,13 @@ On Linux or Mac OS
     c. nginx:  http://localhost:8080
 
     ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/nginx.png)
+
+# Simulate Nginx Failure
+
+1. Stop the Nginx container as shown in the figure below and wait for roughly 1 minute.
+
+   ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/stop-nginx.png)
+
+2. Check Alertmanager to see the alarm has been triggered.
+
+  ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/alert-triggered.png)
