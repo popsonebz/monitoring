@@ -1,0 +1,11 @@
+groups:
+- name: nginx-available
+  rules:
+  - alert: NginxDown
+    expr: probe_success <  1
+    for: 30s
+    labels:
+      severity: "Critical"
+    annotations:
+      summary: Nginx Availability alert.
+      description: Checks if the nginx server is running

@@ -1,0 +1,53 @@
+version: "3.8"
+services:
+
+  alertmanager:
+    image: "prom/alertmanager:v0.21.0"
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./config/alertmanager:/alertmanager
+    command:
+      - '--config.file=/alertmanager/alertmanager.yml'
+    cap_add:
+      - SYS_TIME
+
+  blackbox_exporter:
+    image: prom/blackbox-exporter:v0.18.0
+    ports:
+      - "9115:9115"
+    restart: always
+    ports:
+      - "9115:9115"
+    volumes:
+      - "./config/blackbox_exporter:/config"
+    command: 
+      - '--config.file=/config/blackbox.yml'
+    cap_add:
+      - SYS_TIME
+
+  prometheus:
+    image: "prom/prometheus:v2.22.1"
+    ports:
+      - "9090:9090"
+    depends_on:
+      - alertmanager
+    restart: always
+    volumes:
+      - ./config/prometheus:/prometheus
+    command:
+      - '--config.file=/prometheus/prometheus.yml'
+    cap_add:
+      - SYS_TIME
+
+  nginx:
+    image: "nginx:1.19.4"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+    cap_add:
+      - SYS_TIME
+
+networks:
+  default:
