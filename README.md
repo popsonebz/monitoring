@@ -22,7 +22,7 @@ On Linux or Mac OS
 ```
     You should see the following if all works well.
 
-    ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/monitoring-nginx.png)
+   ![Screenshot](https://github.com/popsonebz/monitoring/blob/main/images/monitoring-nginx.png)
 
 7. Verify the services are running using the browser. The pictures below shows the ideal state when NGINX is up.
 
